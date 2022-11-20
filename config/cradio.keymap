@@ -21,9 +21,9 @@
         default_layer {
             bindings = <
                 &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I    &kp O     &kp P
-                &kp A &kp S &kp D &kp T &kp G        &kp H &kp J &kp K    &kp L     &kp DOLLAR
+                &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K    &kp L     &kp DOLLAR
                 &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp CAPS &kp COMMA &kp DOT
-                          &sl EXTENDED &sl SHIFTED        &kp SPACE &sl SYMBOLS
+                      &sl SYMBOLS &sl SHIFTED        &kp SPACE &sl EXTENDED
             >;
         };
 
@@ -32,7 +32,7 @@
                 &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T)        &kp LS(Y) &kp LS(U) &kp LS(I) &kp LS(O)     &kp LS(P)
                 &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G)        &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L)     &kp  HASH
                 &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)        &kp LS(N) &kp LS(M) &none     &kp SEMICOLON &kp COLON
-                                         &sl EXTENDED &to DEFAULT        &kp LS(SPACE) &sl SYMBOLS
+                                          &sl SYMBOLS &to DEFAULT        &kp LS(SPACE) &sl EXTENDED
             >;
         };
 
@@ -41,7 +41,7 @@
                 &kp N1    &kp N2        &kp N3    &kp N4   &kp N5             &kp N6    &kp N7   &kp N8    &kp N9   &kp N0
                 &none     &kp LESS_THAN &kp LPAR  &kp LBKT &kp LBRC           &kp GRAVE &kp DQT  &kp SQT   &kp AT   &none
                 &kp SLASH &kp STAR      &kp MINUS &kp PLUS &kp PERCENT        &kp AMPS  &kp PIPE &kp TILDE &kp EXCL &kp QMARK
-                                                    &sl SYMBOLS2 &none        &trans &to DEFAULT
+                                                     &to DEFAULT &none        &trans &sl SYMBOLS2
             >;
         };
 
@@ -56,19 +56,19 @@
 
         extended_layer {
             bindings = <
-                &kp ESCAPE &kp C_MUTE   &kp C_VOL_DN     &kp C_VOL_UP &kp C_BRI_INC        &kp key_repeat &kp HOME      &kp UP    &kp END     &kp INSERT
-                &kp K_STOP &kp K_PREV   &kp K_PLAY_PAUSE &kp K_NEXT   &kp C_BRI_DEC        &kp ENTER      &kp LEFT      &kp DOWN  &kp RIGHT   &kp BACKSPACE
-                &sk LCTRL  &sk LEFT_GUI &sk LALT         &kp K_MENU   &none                &kp TAB        &kp PAGE_DOWN &kp PSCRN &kp PAGE_UP &kp DELETE
+                &kp ESCAPE &kp C_MUTE   &kp C_VOL_DN     &kp C_VOL_UP &kp C_BRI_INC        &none          &kp HOME    &kp UP    &kp END       &kp INSERT
+                &sk LCTRL  &sk LEFT_GUI &sk LALT         &kp K_MENU   &none                &kp ENTER      &kp LEFT    &kp DOWN  &kp RIGHT     &kp BACKSPACE
+                &kp K_STOP &kp K_PREV   &kp K_PLAY_PAUSE &kp K_NEXT   &kp C_BRI_DEC        &kp TAB        &kp PAGE_UP &kp PSCRN &kp PAGE_DOWN &kp DELETE
                                                              &to DEFAULT &sk LSHIFT        &trans &sl SYMBOLS2
             >;
         };
 
         settings_layer {
             bindings = <
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4        &none &none &none &none  &none
-                &none        &none        &none        &none        &none               &none &none &none &none  &none
-                &bootloader  &reset       &none        &none        &bt   BT_CLR        &none &none &none &reset &bootloader
-                                                         &to DEFAULT &to DEFAULT        &trans &to DEFAULT
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &none &none &none &none  &none
+                &none        &none        &out OUT_TOG &none        &ext_power EP_TOG        &none &none &none &none  &none
+                &bootloader  &reset       &none        &none        &bt   BT_CLR             &none &none &none &reset &bootloader
+                                                         &to DEFAULT &to DEFAULT             &trans &to DEFAULT
             >;
         };
     };

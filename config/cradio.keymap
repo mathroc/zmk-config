@@ -38,19 +38,19 @@
 
         symbols_layer {
             bindings = <
-                &kp N1    &kp N2        &kp N3    &kp N4   &kp N5             &kp N6    &kp N7   &kp N8    &kp N9   &kp N0
-                &none     &kp LESS_THAN &kp LPAR  &kp LBKT &kp LBRC           &kp GRAVE &kp DQT  &kp SQT   &kp AT   &none
-                &kp SLASH &kp STAR      &kp MINUS &kp PLUS &kp PERCENT        &kp AMPS  &kp PIPE &kp TILDE &kp EXCL &kp QMARK
-                                                     &to DEFAULT &none        &trans &sl SYMBOLS2
+                &kp N1    &kp N2    &kp N3    &kp N4   &kp N5           &kp N6        &kp N7   &kp N8    &kp N9   &kp N0
+                &none     &kp GRAVE &kp SQT   &kp DQT  &kp AT           &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &kp BACKSPACE
+                &kp PIPE  &kp AMPS  &kp QMARK &kp EXCL &kp TILDE        &kp SLASH     &kp STAR &kp MINUS &kp PLUS &kp PERCENT
+                                               &to DEFAULT &none        &trans &sl SYMBOLS2
             >;
         };
 
         symbols2_layer {
             bindings = <
-                &kp F1        &kp F2           &kp F3    &kp F4    &kp F5          &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
-                &none         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC        &none  &none  &none  &none  &kp F11
-                &kp BACKSLASH &kp CARET        &kp UNDER &kp EQUAL &none           &none  &none  &none  &none  &kp F12
-                                                          &sl SYMBOLS &none        &trans &sl EXTENDED
+                &kp F1  &kp F2  &kp F3 &kp F4 &kp F5        &kp F6           &kp F7    &kp F8    &kp F9    &kp F10
+                &kp F11 &kp F12 &none  &none  &none         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC  &kp BACKSPACE
+                &none   &none   &none  &none  &none         &kp BACKSLASH    &kp CARET &kp UNDER &kp EQUAL &none
+                                   &sl SYMBOLS &none        &trans &sl EXTENDED
             >;
         };
 

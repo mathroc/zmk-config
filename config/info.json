@@ -1,0 +1,49 @@
+{
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        { "label": "Q", "row": 0, "col": 0, "x": 0, "y": 1.15 },
+        { "label": "W", "row": 0, "col": 1, "x": 1, "y": 0.4 },
+        { "label": "E", "row": 0, "col": 2, "x": 2, "y": 0 },
+        { "label": "R", "row": 0, "col": 3, "x": 3, "y": 0.3 },
+        { "label": "T", "row": 0, "col": 4, "x": 4, "y": 0.45 },
+
+        { "label": "Y", "row": 0, "col": 7, "x": 7, "y": 0.45 },
+        { "label": "U", "row": 0, "col": 8, "x": 8, "y": 0.3 },
+        { "label": "I", "row": 0, "col": 9, "x": 9, "y": 0 },
+        { "label": "O", "row": 0, "col": 10, "x": 10, "y": 0.4 },
+        { "label": "P", "row": 0, "col": 11, "x": 11, "y": 1.15 },
+
+        { "label": "A", "row": 1, "col": 0, "x": 0, "y": 2.15 },
+        { "label": "S", "row": 1, "col": 1, "x": 1, "y": 1.4 },
+        { "label": "D", "row": 1, "col": 2, "x": 2, "y": 1 },
+        { "label": "F", "row": 1, "col": 3, "x": 3, "y": 1.3 },
+        { "label": "G", "row": 1, "col": 4, "x": 4, "y": 1.45 },
+
+        { "label": "H", "row": 1, "col": 7, "x": 7, "y": 1.45 },
+        { "label": "J", "row": 1, "col": 8, "x": 8, "y": 1.3 },
+        { "label": "K", "row": 1, "col": 9, "x": 9, "y": 1 },
+        { "label": "L", "row": 1, "col": 10, "x": 10, "y": 1.4 },
+        { "label": "$", "row": 1, "col": 11, "x": 11, "y": 2.15 },
+
+        { "label": "Z", "row": 2, "col": 0, "x": 0, "y": 3.15 },
+        { "label": "X", "row": 2, "col": 1, "x": 1, "y": 2.4 },
+        { "label": "C", "row": 2, "col": 2, "x": 2, "y": 2 },
+        { "label": "V", "row": 2, "col": 3, "x": 3, "y": 2.3 },
+        { "label": "B", "row": 2, "col": 4, "x": 4, "y": 2.45 },
+
+        { "label": "N", "row": 2, "col": 7, "x": 7, "y": 2.45 },
+        { "label": "M", "row": 2, "col": 8, "x": 8, "y": 2.3 },
+        { "label": "⇪", "row": 2, "col": 9, "x": 9, "y": 2 },
+        { "label": ",", "row": 2, "col": 10, "x": 10, "y": 2.4 },
+        { "label": ".", "row": 2, "col": 11, "x": 11, "y": 3.15 },
+
+        { "label": "EXT",   "row": 3, "col": 3, "x": 3.65, "y": 3.35, "r": 13 },
+        { "label": "SHIFT", "row": 3, "col": 4, "x": 4.80, "y": 3.65, "r": 26 },
+        { "label": "SPACE", "row": 3, "col": 7, "x": 6.25, "y": 4.05, "r": -26 },
+        { "label": "SYM",   "row": 3, "col": 8, "x": 7.35, "y": 3.55, "r": -13 }
+      ]
+    }
+  }
+}
+

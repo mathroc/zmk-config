@@ -21,7 +21,7 @@
         default_layer {
             bindings = <
                 &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I    &kp O     &kp P
-                &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K    &kp L     &kp DOLLAR
+                &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K    &kp L     &kp BACKSPACE
                 &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp CAPS &kp COMMA &kp DOT
                       &sl SYMBOLS &sl SHIFTED        &kp SPACE &sl EXTENDED
             >;
@@ -30,7 +30,7 @@
         shifted_layer {
             bindings = <
                 &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T)        &kp LS(Y) &kp LS(U) &kp LS(I) &kp LS(O)     &kp LS(P)
-                &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G)        &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L)     &kp  HASH
+                &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G)        &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L)     &kp BACKSPACE
                 &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)        &kp LS(N) &kp LS(M) &none     &kp SEMICOLON &kp COLON
                                           &sl SYMBOLS &to DEFAULT        &kp LS(SPACE) &sl EXTENDED
             >;
@@ -38,28 +38,28 @@
 
         symbols_layer {
             bindings = <
-                &kp N1    &kp N2    &kp N3    &kp N4   &kp N5           &kp N6        &kp N7   &kp N8    &kp N9   &kp N0
-                &none     &kp GRAVE &kp SQT   &kp DQT  &kp AT           &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &kp BACKSPACE
-                &kp PIPE  &kp AMPS  &kp QMARK &kp EXCL &kp TILDE        &kp SLASH     &kp STAR &kp MINUS &kp PLUS &kp PERCENT
-                                               &to DEFAULT &none        &trans &sl SYMBOLS2
+                &kp N1     &kp N2    &kp N3    &kp N4   &kp N5           &kp N6        &kp N7   &kp N8    &kp N9   &kp N0
+                &kp DOLLAR &kp GRAVE &kp SQT   &kp DQT  &kp AT           &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &trans
+                &kp PIPE   &kp AMPS  &kp QMARK &kp EXCL &kp TILDE        &kp SLASH     &kp STAR &kp MINUS &kp PLUS &kp EQUAL
+                                         &to DEFAULT &sl SYMBOLS2        &trans &trans
             >;
         };
 
         symbols2_layer {
             bindings = <
-                &kp F1  &kp F2  &kp F3 &kp F4 &kp F5        &kp F6           &kp F7    &kp F8    &kp F9    &kp F10
-                &kp F11 &kp F12 &none  &none  &none         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC  &kp BACKSPACE
-                &none   &none   &none  &none  &none         &kp BACKSLASH    &kp CARET &kp UNDER &kp EQUAL &none
-                                   &sl SYMBOLS &none        &trans &sl EXTENDED
+                &kp F1  &kp F2  &kp F3 &kp F4 &kp F5        &kp F6           &kp F7    &kp F8    &kp F9   &kp F10
+                &kp F11 &kp F12 &none  &none  &none         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC &trans
+                &none   &none   &none  &none  &none         &kp BACKSLASH    &kp CARET &kp UNDER &kp HASH &kp PERCENT
+                              &sl SYMBOLS &sk LSHIFT        &trans &trans
             >;
         };
 
         extended_layer {
             bindings = <
                 &kp ESCAPE &kp C_MUTE   &kp C_VOL_DN     &kp C_VOL_UP &kp C_BRI_INC        &none          &kp HOME    &kp UP    &kp END       &kp INSERT
-                &sk LCTRL  &sk LEFT_GUI &sk LALT         &kp K_MENU   &none                &kp ENTER      &kp LEFT    &kp DOWN  &kp RIGHT     &kp BACKSPACE
+                &sk LCTRL  &sk LEFT_GUI &sk LALT         &kp K_MENU   &none                &kp ENTER      &kp LEFT    &kp DOWN  &kp RIGHT     &trans
                 &kp K_STOP &kp K_PREV   &kp K_PLAY_PAUSE &kp K_NEXT   &kp C_BRI_DEC        &kp TAB        &kp PAGE_UP &kp PSCRN &kp PAGE_DOWN &kp DELETE
-                                                             &to DEFAULT &sk LSHIFT        &trans &sl SYMBOLS2
+                                                             &to SYMBOLS &sk LSHIFT        &trans &sl DEFAULT
             >;
         };
 

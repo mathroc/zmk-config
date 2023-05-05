@@ -20,18 +20,18 @@
 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I    &kp O     &kp P
-                &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K    &kp L     &kp BACKSPACE
-                &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp CAPS &kp COMMA &kp DOT
+                &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y     &kp O
+                &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I     &kp BACKSPACE
+                &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp CAPS &kp COMMA &kp DOT
                      &sl SHIFTED &sl EXTENDED        &kp SPACE &sl SYMBOLS
             >;
         };
 
         shifted_layer {
             bindings = <
-                &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T)        &kp LS(Y) &kp LS(U) &kp LS(I) &kp LS(O)     &kp LS(P)
-                &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G)        &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L)     &kp BACKSPACE
-                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)        &kp LS(N) &kp LS(M) &none     &kp SEMICOLON &kp COLON
+                &kp LS(Q) &kp LS(W) &kp LS(F) &kp LS(P) &kp LS(B)        &kp LS(J) &kp LS(L) &kp LS(U) &kp LS(Y)     &kp LS(O)
+                &kp LS(A) &kp LS(R) &kp LS(S) &kp LS(T) &kp LS(G)        &kp LS(M) &kp LS(N) &kp LS(E) &kp LS(I)     &kp BACKSPACE
+                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(D) &kp LS(V)        &kp LS(K) &kp LS(H) &none     &kp SEMICOLON &kp COLON
                                                &to DEFAULT &trans        &kp LS(SPACE) &sl SYMBOLS2
             >;
         };

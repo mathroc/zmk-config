@@ -3,7 +3,6 @@ editor:
 
 unzip:
     cd firmware; unzip -o ~/Downloads/firmware.zip
-    echo plug left part
 
 flash part device:
     sudo umount -q /media/tmp || /bin/true

@@ -20,45 +20,45 @@
 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L &kp U    &kp Y     &kp O
-                &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E    &kp I     &kp BACKSPACE
-                &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp CAPS &kp COMMA &kp DOT
+                &kp Q &kp W &kp F &kp P &kp B        &kp J         &kp L &kp U &kp Y     &kp CAPS
+                &kp A &kp R &kp S &kp T &kp G        &kp M         &kp N &kp E &kp I     &kp O
+                &kp Z &kp X &kp C &kp D &kp V        &kp BACKSPACE &kp K &kp H &kp COMMA &kp DOT
                      &sl SHIFTED &sl EXTENDED        &kp SPACE &sl SYMBOLS
             >;
         };
 
         shifted_layer {
             bindings = <
-                &kp LS(Q) &kp LS(W) &kp LS(F) &kp LS(P) &kp LS(B)        &kp LS(J) &kp LS(L) &kp LS(U) &kp LS(Y)     &kp LS(O)
-                &kp LS(A) &kp LS(R) &kp LS(S) &kp LS(T) &kp LS(G)        &kp LS(M) &kp LS(N) &kp LS(E) &kp LS(I)     &kp BACKSPACE
-                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(D) &kp LS(V)        &kp LS(K) &kp LS(H) &none     &kp SEMICOLON &kp COLON
+                &kp LS(Q) &kp LS(W) &kp LS(F) &kp LS(P) &kp LS(B)        &kp LS(J) &kp LS(L) &kp LS(U) &kp LS(Y)     &kp &trans
+                &kp LS(A) &kp LS(R) &kp LS(S) &kp LS(T) &kp LS(G)        &kp LS(M) &kp LS(N) &kp LS(E) &kp LS(I)     &kp LS(O)
+                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(D) &kp LS(V)        &trans    &kp LS(K) &kp LS(H) &kp SEMICOLON &kp COLON
                                                &to DEFAULT &trans        &kp LS(SPACE) &sl SYMBOLS2
             >;
         };
 
         symbols_layer {
             bindings = <
-                &kp N1     &kp N2    &kp N3    &kp N4   &kp N5           &kp N6        &kp N7   &kp N8    &kp N9   &kp N0
-                &kp DOLLAR &kp GRAVE &kp SQT   &kp DQT  &kp AT           &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &trans
-                &kp PIPE   &kp AMPS  &kp QMARK &kp EXCL &kp TILDE        &kp SLASH     &kp STAR &kp MINUS &kp PLUS &kp EQUAL
-                                              &sl SYMBOLS2 &trans        &trans &to DEFAULT
+                &kp N1     &kp N2    &kp N3    &kp N4   &kp N5          &kp N6        &kp N7    &kp N8   &kp N9    &kp N0
+                &kp DOLLAR &kp GRAVE &kp SQT   &kp DQT  &kp AT          &kp LESS_THAN &kp LPAR  &kp LBKT &kp LBRC  &kp EQUAL
+                &kp TILDE  &kp AMPS  &kp QMARK &kp EXCL &kp PIPE        &trans        &kp SLASH &kp STAR &kp MINUS &kp PLUS
+                                             &sl SYMBOLS2 &trans        &trans &to DEFAULT
             >;
         };
 
         symbols2_layer {
             bindings = <
-                &kp F1  &kp F2  &kp F3 &kp F4 &kp F5        &kp F6           &kp F7    &kp F8    &kp F9   &kp F10
-                &kp F11 &kp F12 &none  &none  &none         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC &trans
-                &none   &none   &none  &none  &none         &kp BACKSLASH    &kp CARET &kp UNDER &kp HASH &kp PERCENT
+                &kp F1  &kp F2  &kp F3 &kp F4 &kp F5        &kp F6           &kp F7        &kp F8    &kp F9    &kp F10
+                &kp F11 &kp F12 &none  &none  &none         &kp GREATER_THAN &kp RPAR      &kp RBKT  &kp RBRC  &kp HASH
+                &none   &none   &none  &none  &none         &trans           &kp BACKSLASH &kp CARET &kp UNDER &kp PERCENT
                                    &sk LSHIFT &trans        &trans &sk LSHIFT
             >;
         };
 
         extended_layer {
             bindings = <
-                &kp ESCAPE &kp C_MUTE   &kp C_VOL_DN     &kp C_VOL_UP &kp C_BRI_INC        &none          &kp HOME    &kp PSCRN &kp END       &kp INSERT
-                &sk LCTRL  &sk LEFT_GUI &sk LALT         &kp K_MENU   &none                &kp ENTER      &kp LEFT    &kp UP    &kp RIGHT     &trans
-                &kp K_STOP &kp K_PREV   &kp K_PLAY_PAUSE &kp K_NEXT   &kp C_BRI_DEC        &kp TAB        &kp PAGE_UP &kp DOWN  &kp PAGE_DOWN &kp DELETE
+                &kp ESCAPE &kp C_MUTE   &kp C_VOL_DN     &kp C_VOL_UP &kp C_BRI_INC        &none     &kp HOME    &kp DELETE &kp END       &kp INSERT
+                &sk LCTRL  &sk LEFT_GUI &sk LALT         &kp K_MENU   &none                &kp ENTER &kp LEFT    &kp UP     &kp RIGHT     &kp TAB
+                &kp K_STOP &kp K_PREV   &kp K_PLAY_PAUSE &kp K_NEXT   &kp C_BRI_DEC        &trans    &kp PAGE_UP &kp DOWN   &kp PAGE_DOWN &kp PSCRN
                                                              &sk LSHIFT &sl DEFAULT        &trans &sk LSHIFT
             >;
         };

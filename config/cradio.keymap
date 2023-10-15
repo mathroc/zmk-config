@@ -21,6 +21,24 @@
 };
 
 / {
+    behaviors {
+        shifted: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sl SHIFTED>, <&caps_word>;
+        };
+
+        lshift: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHIFT>, <&caps_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -29,7 +47,7 @@
                 &kp Q &kp W &kp F &kp P &kp B                                   &kp J   &kp L &kp U &kp Y     &kp CAPS
                 &kp A &kp R &kp S &kp T &kp G                                   &kp M   &kp N &kp E &kp I     &kp O
                 &kp Z &kp X &kp C &kp D &kp V                                   &kp DOT &kp K &kp H &kp COMMA &kp BACKSPACE
-                        &sl SHIFTED &sl EXT_1                                   &kp SPACE &sl SHIFTED
+                           &shifted &sl EXT_1                                   &kp SPACE &shifted
             >;
         };
 
@@ -47,7 +65,7 @@
                 &kp GRAVE  &kp DOLLAR &kp SQT      &kp DQT  &kp AT              &kp PIPE   &kp AMPS   &kp QMARK &kp EXCL  &kp TILDE
                 &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &kp ESCAPE &kp LEFT   &kp UP    &kp RIGHT &kp DELETE
                 &sl SYSTEM &sl MATH_1 &sl EXT_2    &sl OP_1 &sl MOUSE           &kp TAB    &kp ENTER  &kp DOWN  &none     &trans
-                                                &sk LSHIFT &sl DEFAULT          &trans &sk RSHIFT
+                                                   &lshift &sl DEFAULT          &trans &lshift
             >;
         };
 
@@ -56,7 +74,7 @@
                 &none      &none      &none        &none    &none               &none &none    &none         &none   &none
                 &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &none &kp HOME &kp PAGE_UP   &kp END &kp INSERT
                 &sl SYSTEM &sl MATH_2 &sl EXT_1    &sl OP_2 &sl MOUSE           &none &none    &kp PAGE_DOWN &none   &trans
-                                                &sk LSHIFT &sl DEFAULT          &trans &sk RSHIFT
+                                                   &lshift &sl DEFAULT          &trans &lshift
             >;
         };
 
@@ -66,7 +84,7 @@
                 &none      &none     &none        &none    &none                &none  &kp N7 &kp N7 &kp N9 &none
                 &none      &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU           &none  &kp N4 &kp N5 &kp N6 &none
                 &sl SYSTEM &sl EXT_1 &sl MATH_2   &sl OP_1 &sl MOUSE            &kp N0 &kp N1 &kp N2 &kp N3 &trans
-                                               &sk LSHIFT &sl DEFAULT           &trans &sk RSHIFT
+                                                  &lshift &sl DEFAULT           &trans &lshift
             >;
         };
 
@@ -75,7 +93,7 @@
                 &none      &none     &none        &none    &none                &kp F12 &kp F7 &kp F7 &kp F9 &none
                 &none      &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU           &kp F11 &kp F4 &kp F5 &kp F6 &none
                 &sl SYSTEM &sl EXT_2 &sl MATH_1   &sl OP_2 &sl MOUSE            &kp F10 &kp F1 &kp F2 &kp F3 &trans
-                                               &sk LSHIFT &sl DEFAULT           &trans &sk RSHIFT
+                                                  &lshift &sl DEFAULT           &trans &lshift
             >;
         };
 
@@ -84,7 +102,7 @@
                 &none      &none      &none        &none     &none              &none         &none    &none     &none    &none
                 &none      &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &kp EQUAL
                 &sl SYSTEM &sl MATH_1 &sl OP_2     &sl EXT_1 &sl MOUSE          &kp SLASH     &kp STAR &kp MINUS &kp PLUS &trans
-                                                 &sk LSHIFT &sl DEFAULT         &trans &sk RSHIFT
+                                                    &lshift &sl DEFAULT         &trans &lshift
             >;
         };
 
@@ -93,7 +111,7 @@
                 &none      &none      &none        &none     &none              &none            &none     &none     &none      &none
                 &none      &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC   &kp HASH
                 &sl SYSTEM &sl MATH_2 &sl OP_1     &sl EXT_2 &sl MOUSE          &kp BACKSLASH    &kp CARET &kp UNDER &kp PERCENT &trans
-                                                 &sk LSHIFT &sl DEFAULT         &trans &sk RSHIFT
+                                                    &lshift &sl DEFAULT         &trans &lshift
             >;
         };
 
@@ -102,7 +120,7 @@
                 &none     &none      &none        &none    &none                &kp K_STOP    &kp K_PREV &kp K_PLAY_PAUSE &kp K_NEXT &none
                 &none     &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU           &kp C_BRI_INC &none      &kp C_VOL_UP     &none      &kp PSCRN
                 &sl EXT_1 &sl MATH_1 &none        &sl OP_1 &sl MOUSE            &kp C_BRI_DEC &none      &kp C_VOL_DN     &kp C_MUTE &trans
-                                               &sk LSHIFT &sl DEFAULT           &trans &sk RSHIFT
+                                                  &lshift &sl DEFAULT           &trans &lshift
             >;
         };
 
@@ -111,7 +129,7 @@
                 &none      &none      &none        &none    &none               &none &none &none &none &none
                 &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &none &none &none &none &none
                 &sl SYSTEM &sl MATH_1 &none        &sl OP_1 &sl EXT_1           &none &none &none &none &none
-                                               &sk LSHIFT &sl DEFAULT           &trans &sk RSHIFT
+                                                  &lshift &sl DEFAULT           &trans &lshift
             >;
         };
 
@@ -127,7 +145,7 @@
 
     combos {
         compatible = "zmk,combos";
-        // Settings: lshift + ext_1 + rshift
+        // Settings: lshift + ext_1 + lshift
         combo_settings {
             timeout-ms = <300>;
             key-positions = <30 31 33>;

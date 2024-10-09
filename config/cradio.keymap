@@ -53,9 +53,9 @@
 
         shifted_layer {
             bindings = <
-                &kp LS(Q) &kp LS(W) &kp LS(F) &kp LS(P) &kp LS(B)               &kp LS(J) &kp LS(L) &kp LS(U) &kp LS(Y) &kp SEMICOLON
-                &kp LS(A) &kp LS(R) &kp LS(S) &kp LS(T) &kp LS(G)               &kp LS(M) &kp LS(N) &kp LS(E) &kp LS(I) &kp LS(O)
-                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(D) &kp LS(V)               &kp COLON &kp LS(K) &kp LS(H) &trans    &trans
+                &kp LS(Q) &kp LS(W) &kp LS(F) &kp LS(P) &kp LS(B)               &kp LS(J) &kp LS(L) &kp LS(U) &kp LS(Y)      &trans
+                &kp LS(A) &kp LS(R) &kp LS(S) &kp LS(T) &kp LS(G)               &kp LS(M) &kp LS(N) &kp LS(E) &kp LS(I)      &kp LS(O)
+                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(D) &kp LS(V)               &kp COLON &kp LS(K) &kp LS(H) &kp SEMICOLON  &trans
                                                &to DEFAULT &trans               &kp LS(SPACE) &to DEFAULT
             >;
         };
@@ -81,7 +81,7 @@
 
         math_1_layer {
             bindings = <
-                &none      &none     &none        &none    &none                &none  &kp N7 &kp N7 &kp N9 &none
+                &none      &none     &none        &none    &none                &none  &kp N7 &kp N8 &kp N9 &none
                 &none      &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU           &none  &kp N4 &kp N5 &kp N6 &none
                 &sl SYSTEM &sl EXT_1 &sl MATH_2   &sl OP_1 &sl MOUSE            &kp N0 &kp N1 &kp N2 &kp N3 &trans
                                                   &lshift &sl DEFAULT           &trans &lshift

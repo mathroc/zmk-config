@@ -1,81 +1,151 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // Layers
 #define DEFAULT  0
 #define SHIFTED  1
-#define SYMBOLS  2
-#define SYMBOLS2 3
-#define EXTENDED 4
-#define SETTINGS 5
+#define EXT_1 2
+#define EXT_2 3
+#define MATH_1 4
+#define MATH_2 5
+#define OP_1 6
+#define OP_2 7
+#define SYSTEM 8
+#define MOUSE 9
+#define SETTINGS 10
 
 &sk {
     ignore-modifiers;
 };
 
 / {
+    behaviors {
+        shifted: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sl SHIFTED>, <&caps_word>;
+        };
+
+        lshift: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHIFT>, <&caps_word>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U &kp I    &kp O     &kp P
-                &kp A &kp S &kp D &kp F &kp G        &kp H &kp J &kp K    &kp L     &kp BACKSPACE
-                &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M &kp CAPS &kp COMMA &kp DOT
-                     &sl EXTENDED &sl SHIFTED        &kp SPACE &sl SYMBOLS
+                &kp Q &kp W &kp F &kp P &kp B                                   &kp J   &kp L &kp U &kp Y     &kp CAPS
+                &kp A &kp R &kp S &kp T &kp G                                   &kp M   &kp N &kp E &kp I     &kp O
+                &kp Z &kp X &kp C &kp D &kp V                                   &kp DOT &kp K &kp H &kp COMMA &kp BACKSPACE
+                           &shifted &sl EXT_1                                   &kp SPACE &shifted
             >;
         };
 
         shifted_layer {
             bindings = <
-                &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T)        &kp LS(Y) &kp LS(U) &kp LS(I) &kp LS(O)     &kp LS(P)
-                &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G)        &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L)     &kp BACKSPACE
-                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)        &kp LS(N) &kp LS(M) &none     &kp SEMICOLON &kp COLON
-                                         &sl EXTENDED &to DEFAULT        &kp LS(SPACE) &sl SYMBOLS2
+                &kp LS(Q) &kp LS(W) &kp LS(F) &kp LS(P) &kp LS(B)               &kp LS(J) &kp LS(L) &kp LS(U) &kp LS(Y)      &trans
+                &kp LS(A) &kp LS(R) &kp LS(S) &kp LS(T) &kp LS(G)               &kp LS(M) &kp LS(N) &kp LS(E) &kp LS(I)      &kp LS(O)
+                &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(D) &kp LS(V)               &kp COLON &kp LS(K) &kp LS(H) &kp SEMICOLON  &trans
+                                               &to DEFAULT &trans               &kp LS(SPACE) &to DEFAULT
             >;
         };
 
-        symbols_layer {
+        ext_1_layer {
             bindings = <
-                &kp N1     &kp N2    &kp N3    &kp N4   &kp N5           &kp N6        &kp N7   &kp N8    &kp N9   &kp N0
-                &kp DOLLAR &kp GRAVE &kp SQT   &kp DQT  &kp AT           &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &trans
-                &kp PIPE   &kp AMPS  &kp QMARK &kp EXCL &kp TILDE        &kp SLASH     &kp STAR &kp MINUS &kp PLUS &kp EQUAL
-                                              &trans &sl SYMBOLS2        &trans &to DEFAULT
+                &kp GRAVE  &kp DOLLAR &kp SQT      &kp DQT  &kp AT              &kp PIPE   &kp AMPS   &kp QMARK &kp EXCL  &kp TILDE
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &kp ESCAPE &kp LEFT   &kp UP    &kp RIGHT &kp DELETE
+                &sl SYSTEM &sl MATH_1 &sl EXT_2    &sl OP_1 &sl MOUSE           &kp TAB    &kp ENTER  &kp DOWN  &none     &trans
+                                                   &lshift &sl DEFAULT          &trans &lshift
             >;
         };
 
-        symbols2_layer {
+        ext_2_layer {
             bindings = <
-                &kp F1  &kp F2  &kp F3 &kp F4 &kp F5        &kp F6           &kp F7    &kp F8    &kp F9   &kp F10
-                &kp F11 &kp F12 &none  &none  &none         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC &trans
-                &none   &none   &none  &none  &none         &kp BACKSLASH    &kp CARET &kp UNDER &kp HASH &kp PERCENT
-                                   &trans &sk LSHIFT        &trans &sl SYMBOLS
+                &none      &none      &none        &none    &none               &none &none    &none         &none   &none
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &none &kp HOME &kp PAGE_UP   &kp END &kp INSERT
+                &sl SYSTEM &sl MATH_2 &sl EXT_1    &sl OP_2 &sl MOUSE           &none &none    &kp PAGE_DOWN &none   &trans
+                                                   &lshift &sl DEFAULT          &trans &lshift
             >;
         };
 
-        extended_layer {
+
+        math_1_layer {
             bindings = <
-                &kp ESCAPE &kp C_MUTE   &kp C_VOL_DN     &kp C_VOL_UP &kp C_BRI_INC        &none          &kp HOME    &kp PSCRN &kp END       &kp INSERT
-                &sk LCTRL  &sk LEFT_GUI &sk LALT         &kp K_MENU   &none                &kp ENTER      &kp LEFT    &kp UP    &kp RIGHT     &trans
-                &kp K_STOP &kp K_PREV   &kp K_PLAY_PAUSE &kp K_NEXT   &kp C_BRI_DEC        &kp TAB        &kp PAGE_UP &kp DOWN  &kp PAGE_DOWN &kp DELETE
-                                                             &sl DEFAULT &sk LSHIFT        &trans &to SYMBOLS
+                &none      &none     &none        &none    &none                &none  &kp N7 &kp N8 &kp N9 &none
+                &none      &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU           &none  &kp N4 &kp N5 &kp N6 &none
+                &sl SYSTEM &sl EXT_1 &sl MATH_2   &sl OP_1 &sl MOUSE            &kp N0 &kp N1 &kp N2 &kp N3 &trans
+                                                  &lshift &sl DEFAULT           &trans &lshift
+            >;
+        };
+
+        math_2_layer {
+            bindings = <
+                &none      &none     &none        &none    &none                &kp F12 &kp F7 &kp F7 &kp F9 &none
+                &none      &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU           &kp F11 &kp F4 &kp F5 &kp F6 &none
+                &sl SYSTEM &sl EXT_2 &sl MATH_1   &sl OP_2 &sl MOUSE            &kp F10 &kp F1 &kp F2 &kp F3 &trans
+                                                  &lshift &sl DEFAULT           &trans &lshift
+            >;
+        };
+
+        op_1_layer {
+            bindings = <
+                &none      &none      &none        &none     &none              &none         &none    &none     &none    &none
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &kp EQUAL
+                &sl SYSTEM &sl MATH_1 &sl OP_2     &sl EXT_1 &sl MOUSE          &kp SLASH     &kp STAR &kp MINUS &kp PLUS &trans
+                                                    &lshift &sl DEFAULT         &trans &lshift
+            >;
+        };
+
+        op_2_layer {
+            bindings = <
+                &none      &none      &none        &none     &none              &none            &none     &none     &none      &none
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC   &kp HASH
+                &sl SYSTEM &sl MATH_2 &sl OP_1     &sl EXT_2 &sl MOUSE          &kp BACKSLASH    &kp CARET &kp UNDER &kp PERCENT &trans
+                                                    &lshift &sl DEFAULT         &trans &lshift
+            >;
+        };
+
+        system_layer   {
+            bindings = <
+                &none     &none      &none        &none    &none                &kp K_STOP    &kp K_PREV &kp K_PLAY_PAUSE &kp K_NEXT &none
+                &none     &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU           &kp C_BRI_INC &none      &kp C_VOL_UP     &none      &kp PSCRN
+                &sl EXT_1 &sl MATH_1 &none        &sl OP_1 &sl MOUSE            &kp C_BRI_DEC &none      &kp C_VOL_DN     &kp C_MUTE &trans
+                                                  &lshift &sl DEFAULT           &trans &lshift
+            >;
+        };
+
+        mouse_layer   {
+            bindings = <
+                &none      &none      &none        &none    &none               &none &none &none &none &none
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &none &none &none &none &none
+                &sl SYSTEM &sl MATH_1 &none        &sl OP_1 &sl EXT_1           &none &none &none &none &none
+                                                  &lshift &sl DEFAULT           &trans &lshift
             >;
         };
 
         settings_layer {
             bindings = <
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &none &none &none &none  &none
-                &none        &none        &none        &none        &none                    &none &none &none &none  &none
-                &bootloader  &reset       &none        &none        &bt   BT_CLR             &none &none &none &reset &bootloader
-                                                         &to DEFAULT &to DEFAULT             &trans &to DEFAULT
+                &bootloader &out OUT_USB &out OUT_TOG &out OUT_BLE &bt BT_CLR   &bootloader &out OUT_USB &out OUT_TOG &out OUT_BLE &bt BT_CLR
+                &sys_reset  &bt BT_SEL 3 &bt BT_SEL 4 &none        &bt BT_NXT   &sys_reset  &bt BT_SEL 3 &bt BT_SEL 4 &none        &bt BT_NXT
+                &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_PRV   &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_PRV
+                                                      &to DEFAULT &to DEFAULT   &to DEFAULT &to DEFAULT
             >;
         };
     };
 
     combos {
         compatible = "zmk,combos";
-        // Settings: ext + shift + sym
+        // Settings: lshift + ext_1 + lshift
         combo_settings {
             timeout-ms = <300>;
             key-positions = <30 31 33>;

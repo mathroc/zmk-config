@@ -154,7 +154,7 @@
         };
         // Mouse: LCLK + RCLK ⇒ MCLK
         combo_middle_click {
-            layers = <mouse_layer>
+            layers = <9>
             timeout-ms = <100>;
             key-positions = <32 33>;
             bindings = <&mkp MCLK>;

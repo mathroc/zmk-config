@@ -119,8 +119,8 @@
         system_layer {
             bindings = <
                 &none     &none      &none        &none    &none                &kp K_STOP &kp K_PREV    &kp K_PLAY_PAUSE &kp K_NEXT &none
-                &none     &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU           &none      &kp C_VOL_DN  &kp C_VOL_UP     &none      &kp PSCRN
-                &sl EXT_1 &sl MATH_1 &none        &sl OP_1 &sl MOUSE            &none      &kp C_BRI_DEC &kp C_BRI_INC    &kp C_MUTE &trans
+                &none     &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU           &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none      &kp PSCRN
+                &sl EXT_1 &sl MATH_1 &none        &sl OP_1 &sl MOUSE            &none      &kp C_BRI_DEC &kp C_BRI_INC    &none      &trans
                                                   &lshift &sl DEFAULT           &trans &lshift
             >;
         };
@@ -153,7 +153,7 @@
             bindings = <&mo SETTINGS>;
         };
         // Mouse: LCLK + RCLK ⇒ MCLK
-        combo_settings {
+        combo_middle_click {
             layers = <mouse_layer>
             timeout-ms = <100>;
             key-positions = <32 33>;

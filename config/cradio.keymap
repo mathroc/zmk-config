@@ -63,18 +63,18 @@
 
         ext_1_layer {
             bindings = <
-                &kp GRAVE  &kp DOLLAR &kp SQT      &kp DQT  &kp AT              &kp PIPE   &kp AMPS   &kp QMARK &kp EXCL  &kp TILDE
-                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &kp ESCAPE &kp LEFT   &kp UP    &kp RIGHT &kp DELETE
-                &sl SYSTEM &sl MATH_1 &sl EXT_2    &sl OP_1 &sl MOUSE           &kp TAB    &kp ENTER  &kp DOWN  &none     &trans
+                &kp GRAVE  &kp DOLLAR &kp SQT      &kp DQT  &kp AT              &kp ESCAPE &kp AMPS   &kp QMARK &kp EXCL  &none
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT &kp DELETE
+                &sl SYSTEM &sl MATH_1 &sl EXT_2    &sl OP_1 &sl MOUSE           &kp TAB    &kp ENTER  &kp TILDE &kp PIPE  &none
                                                    &lshift &sl DEFAULT          &trans &lshift
             >;
         };
 
         ext_2_layer {
             bindings = <
-                &none      &none      &none        &none    &none               &none &none    &none         &none   &none
-                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &none &kp HOME &kp PAGE_UP   &kp END &kp INSERT
-                &sl SYSTEM &sl MATH_2 &sl EXT_1    &sl OP_2 &sl MOUSE           &none &none    &kp PAGE_DOWN &none   &trans
+                &none      &none      &none        &none    &none               &none    &none         &none       &none   &none
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &kp INSERT
+                &sl SYSTEM &sl MATH_2 &sl EXT_1    &sl OP_2 &sl MOUSE           &none    &none         &none       &none   &trans
                                                    &lshift &sl DEFAULT          &trans &lshift
             >;
         };
@@ -116,20 +116,20 @@
             >;
         };
 
-        system_layer   {
+        system_layer {
             bindings = <
-                &none     &none      &none        &none    &none                &kp K_STOP    &kp K_PREV &kp K_PLAY_PAUSE &kp K_NEXT &none
-                &none     &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU           &kp C_BRI_INC &none      &kp C_VOL_UP     &none      &kp PSCRN
-                &sl EXT_1 &sl MATH_1 &none        &sl OP_1 &sl MOUSE            &kp C_BRI_DEC &none      &kp C_VOL_DN     &kp C_MUTE &trans
+                &none     &none      &none        &none    &none                &kp K_STOP &kp K_PREV    &kp K_PLAY_PAUSE &kp K_NEXT &none
+                &none     &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU           &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none      &kp PSCRN
+                &sl EXT_1 &sl MATH_1 &none        &sl OP_1 &sl MOUSE            &none      &kp C_BRI_DEC &kp C_BRI_INC    &none      &trans
                                                   &lshift &sl DEFAULT           &trans &lshift
             >;
         };
 
-        mouse_layer   {
+        mouse_layer {
             bindings = <
-                &none      &none      &none        &none    &none               &none &msc SCRL_UP   &none          &msc SCRL_DOWN  &none
-                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &none &mmv MOVE_LEFT &mmv MOVE_UP   &mmv MOVE_RIGHT &none
-                &sl SYSTEM &sl MATH_1 &none        &sl OP_1 &sl EXT_1           &none &msc SCRL_LEFT &mmv MOVE_DOWN &msc SCRL_RIGHT &none
+                &none      &none      &none        &none    &none               &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+                &none      &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
+                &sl SYSTEM &sl MATH_1 &none        &sl OP_1 &sl EXT_1           &none &none &none &none &none
                                                   &lshift &sl DEFAULT           &mkp LCLK &mkp RCLK
             >;
         };
@@ -151,6 +151,13 @@
             timeout-ms = <300>;
             key-positions = <30 31 33>;
             bindings = <&mo SETTINGS>;
+        };
+        // Mouse: LCLK + RCLK ⇒ MCLK
+        combo_middle_click {
+            layers = <9>
+            timeout-ms = <100>;
+            key-positions = <32 33>;
+            bindings = <&mkp MCLK>;
         };
     };
 };

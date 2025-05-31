@@ -16,6 +16,7 @@ include:
     # ferris sweep left
   - board: nice_nano_v2
     shield: cradio_left
+    snippet: zmk-usb-logging
     # ferris sweep right
   - board: nice_nano_v2
     shield: cradio_right

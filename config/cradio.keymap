@@ -144,14 +144,26 @@
 
     combos {
         compatible = "zmk,combos";
+
         // Settings: lshift + ext_1 + lshift
-        combo_settings {
+        settings {
             timeout-ms = <300>;
             key-positions = <30 31 33>;
             bindings = <&mo SETTINGS>;
         };
+
+        settings_left {
+            bindings = <&sl 10>;
+            key-positions = <20 30 31 0>;
+        };
+
+        settings_right {
+            bindings = <&sl 10>;
+            key-positions = <33 32 29 9>;
+        };
+
         // Mouse: LCLK + RCLK ⇒ MCLK
-        combo_middle_click {
+        middle_click {
             layers = <9>;
             timeout-ms = <100>;
             key-positions = <32 33>;

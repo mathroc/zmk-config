@@ -16,6 +16,7 @@
 #define SYSTEM 8
 #define MOUSE 9
 #define SETTINGS 10
+#define LOCK 11
 
 &sk { ignore-modifiers; };
 
@@ -61,84 +62,96 @@
 
         ext_1_layer {
             bindings = <
-                &kp GRAVE  &kp DOLLAR &kp SQT      &kp DQT  &kp AT              &kp ESCAPE &kp AMPS   &kp QMARK &kp EXCL  &trans
-                &tog EXT_1 &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT &kp DELETE
-                &sl SYSTEM &sl MATH_1 &sl EXT_2    &sl OP_1 &sl MOUSE           &kp TAB    &kp ENTER  &kp TILDE &kp PIPE  &trans
-                                                   &lshift &sl DEFAULT          &trans &lshift
+                &kp GRAVE   &kp DOLLAR &kp SQT      &kp DQT  &kp AT             &kp ESCAPE &kp AMPS   &kp QMARK &kp EXCL  &trans
+                &lock EXT_1 &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU         &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT &kp DELETE
+                &sl SYSTEM  &sl MATH_1 &sl EXT_2    &sl OP_1 &sl MOUSE          &kp TAB    &kp ENTER  &kp TILDE &kp PIPE  &trans
+                                                    &lshift &to DEFAULT         &trans &lshift
             >;
         };
 
         ext_2_layer {
             bindings = <
-                &none      &none      &none        &none    &none               &none    &none         &none       &none   &trans
-                &tog EXT_2 &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &kp INSERT
-                &sl SYSTEM &sl MATH_2 &sl EXT_1    &sl OP_2 &sl MOUSE           &none    &none         &none       &none   &trans
-                                                   &lshift &sl DEFAULT          &trans &lshift
+                &none       &none      &none        &none    &none              &none    &none         &none       &none   &trans
+                &lock EXT_2 &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU         &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &kp INSERT
+                &sl SYSTEM  &sl MATH_2 &sl EXT_1    &sl OP_2 &sl MOUSE          &none    &none         &none       &none   &trans
+                                                    &lshift &to DEFAULT         &trans &lshift
             >;
         };
 
 
         math_1_layer {
             bindings = <
-                &none       &none     &none        &none    &none                &none  &kp N7 &kp N8 &kp N9 &trans
-                &tog MATH_1 &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU           &none  &kp N4 &kp N5 &kp N6 &none
-                &sl SYSTEM  &sl EXT_1 &sl MATH_2   &sl OP_1 &sl MOUSE            &kp N0 &kp N1 &kp N2 &kp N3 &trans
-                                                   &lshift &sl DEFAULT           &trans &lshift
+                &none        &none     &none        &none    &none              &none  &kp N7 &kp N8 &kp N9 &trans
+                &lock MATH_1 &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU         &none  &kp N4 &kp N5 &kp N6 &none
+                &sl SYSTEM   &sl EXT_1 &sl MATH_2   &sl OP_1 &sl MOUSE          &kp N0 &kp N1 &kp N2 &kp N3 &trans
+                                                    &lshift &to DEFAULT         &trans &lshift
             >;
         };
 
         math_2_layer {
             bindings = <
-                &none       &none     &none        &none    &none                &kp F12 &kp F7 &kp F8 &kp F9 &trans
-                &tog MATH_2 &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU           &kp F11 &kp F4 &kp F5 &kp F6 &none
-                &sl SYSTEM  &sl EXT_2 &sl MATH_1   &sl OP_2 &sl MOUSE            &kp F10 &kp F1 &kp F2 &kp F3 &trans
-                                                   &lshift &sl DEFAULT           &trans &lshift
+                &none        &none     &none        &none    &none              &kp F12 &kp F7 &kp F8 &kp F9 &trans
+                &lock MATH_2 &sk LCTRL &sk LEFT_GUI &sk LALT &kp K_MENU         &kp F11 &kp F4 &kp F5 &kp F6 &none
+                &sl SYSTEM   &sl EXT_2 &sl MATH_1   &sl OP_2 &sl MOUSE          &kp F10 &kp F1 &kp F2 &kp F3 &trans
+                                                    &lshift &to DEFAULT         &trans &lshift
             >;
         };
 
         op_1_layer {
             bindings = <
                 &none      &none      &none        &none     &none              &none         &none    &none     &none    &trans
-                &tog OP_1  &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &kp EQUAL
+                &lock OP_1 &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp LESS_THAN &kp LPAR &kp LBKT  &kp LBRC &kp EQUAL
                 &sl SYSTEM &sl MATH_1 &sl OP_2     &sl EXT_1 &sl MOUSE          &kp SLASH     &kp STAR &kp MINUS &kp PLUS &trans
-                                                    &lshift &sl DEFAULT         &trans &lshift
+                                                    &lshift &to DEFAULT         &trans &lshift
             >;
         };
 
         op_2_layer {
             bindings = <
                 &none      &none      &none        &none     &none              &none            &none     &none     &none      &trans
-                &tog OP_2  &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC   &kp HASH
+                &lock OP_2 &sk LCTRL  &sk LEFT_GUI &sk LALT  &kp K_MENU         &kp GREATER_THAN &kp RPAR  &kp RBKT  &kp RBRC   &kp HASH
                 &sl SYSTEM &sl MATH_2 &sl OP_1     &sl EXT_2 &sl MOUSE          &kp BACKSLASH    &kp CARET &kp UNDER &kp PERCENT &trans
-                                                    &lshift &sl DEFAULT         &trans &lshift
+                                                    &lshift &to DEFAULT         &trans &lshift
             >;
         };
 
         system_layer {
             bindings = <
-                &none       &none      &none        &none    &none                &kp K_STOP &kp K_PREV    &kp K_PLAY_PAUSE &kp K_NEXT &trans
-                &tog SYSTEM &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU           &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none      &kp PSCRN
-                &sl EXT_1   &sl MATH_1 &none        &sl OP_1 &sl MOUSE            &none      &kp C_BRI_DEC &kp C_BRI_INC    &none      &trans
-                                                    &lshift &sl DEFAULT           &trans &lshift
+                &none        &none      &none        &none    &none             &kp K_STOP &kp K_PREV    &kp K_PLAY_PAUSE &kp K_NEXT &trans
+                &lock SYSTEM &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU        &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none      &kp PSCRN
+                &sl EXT_1    &sl MATH_1 &none        &sl OP_1 &sl MOUSE         &none      &kp C_BRI_DEC &kp C_BRI_INC    &none      &trans
+                                                     &lshift &to DEFAULT        &trans &lshift
             >;
         };
 
         mouse_layer {
             bindings = <
-                &none      &none      &none        &none    &none               &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
-                &tog MOUSE &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU          &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-                &sl SYSTEM &sl MATH_1 &none        &sl OP_1 &sl EXT_1           &none          &none          &none        &none           &trans
-                                                  &lshift &sl DEFAULT           &mkp LCLK &mkp RCLK
+                &none       &none      &none        &none    &none              &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+                &lock MOUSE &sk LCTRL  &sk LEFT_GUI &sk LALT &kp K_MENU         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
+                &sl SYSTEM  &sl MATH_1 &none        &sl OP_1 &sl EXT_1          &none          &none          &none        &none           &trans
+                                                    &lshift &to DEFAULT         &mkp LCLK &mkp RCLK
             >;
         };
 
         settings_layer {
             bindings = <
-                &bootloader   &out OUT_USB &out OUT_TOG &out OUT_BLE &bt BT_CLR   &bootloader &out OUT_USB &out OUT_TOG &out OUT_BLE &bt BT_CLR
-                &tog SETTINGS &bt BT_SEL 3 &bt BT_SEL 4 &none        &bt BT_NXT   &sys_reset  &bt BT_SEL 3 &bt BT_SEL 4 &none        &bt BT_NXT
-                &sys_reset    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_PRV   &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_PRV
-                                                        &to DEFAULT &to DEFAULT   &to DEFAULT &to DEFAULT
+                &bootloader    &out OUT_USB &out OUT_TOG &out OUT_BLE &bt BT_CLR   &bootloader &out OUT_USB &out OUT_TOG &out OUT_BLE &bt BT_CLR
+                &lock SETTINGS &bt BT_SEL 3 &bt BT_SEL 4 &none        &bt BT_NXT   &sys_reset  &bt BT_SEL 3 &bt BT_SEL 4 &none        &bt BT_NXT
+                &sys_reset     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_PRV   &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_PRV
+                                                         &to DEFAULT &to DEFAULT   &to DEFAULT &to DEFAULT
             >;
+        };
+    };
+
+    macros {
+        lock: lock {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>; // Must be 1
+            bindings
+                = <&macro_pause_for_release>
+                , <&to DEFAULT>
+                , <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>
+                ;
         };
     };
 
